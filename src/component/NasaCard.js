@@ -5,11 +5,24 @@ import {
   } from 'reactstrap';
 import styled from "styled-components"
 
-const nasaTitle = styled.h1`
-font-size: 2.5rem;
+// const whatever = styled(Component)`
+//   (styling rules here)
+// `;
+
+const NasaTitle = styled(CardTitle)`
+font-size: 3rem;
 font-weight:650;
-color: slateblue;
-`
+color: slateblue
+`;
+
+const NasaDate = styled(CardSubtitle)`
+font-size: 1.7rem;
+font-weight:650;
+margin:1rem 0;
+`;
+const NasaImg = styled(CardImg)`
+height:60vh;
+`;
 
 const NasaCard = (props) =>{
     return(
@@ -17,11 +30,11 @@ const NasaCard = (props) =>{
     <Container>
     <Col>
     <Card>
-        <CardImg top width="85%" src={props.imgUrl} alt="Picture of heavenly bodies for nov 7,2019" />
+        <NasaImg top width="85%" src={props.imgUrl} alt="Picture of heavenly bodies for nov 7,2019" />
         <CardBody>
-          <CardTitle>{props.title}</CardTitle>
-          <CardSubtitle>Date: {props.date}</CardSubtitle>
-          <CardSubtitle>Copyright {props.copyright}</CardSubtitle>
+          <NasaTitle>{props.title}</NasaTitle>
+          <NasaDate>Date: {props.date}</NasaDate>
+          <NasaDate>Copyright {props.copyright}</NasaDate>
           <CardText>Description: {props.photoCaption}</CardText>
           <Button>Subscribe</Button>
         </CardBody>
